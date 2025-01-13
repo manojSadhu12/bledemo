@@ -9,13 +9,29 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.smk.bledemo",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "App needs location to search nearby devices",
+        "NSLocationWhenInUseUsageDescription": "App needs location to search nearby devices",
+        "NSBluetoothAlwaysUsageDescription": "App needs bluetooth to search nearby devices",
+        "NSBluetoothPeripheralUsageDescription": "App needs bluetooth to search nearby devices"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ],
+      "package": "com.smk.bledemo"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +47,18 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      "react-native-ble-manager",
+      [
+        "react-native-permissions",
+        {
+          "iosPermissions": [
+            "LocationAccuracy",
+            "LocationAlways",
+            "LocationWhenInUse",
+            "Bluetooth"
+          ]
         }
       ]
     ],
